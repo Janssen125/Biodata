@@ -25,7 +25,7 @@ while($row = mysqli_fetch_array($query)){
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>NO URUT</td><td style="text-align:center;"><?= $row['no_urut'] ?></td></tr>
+                                    <td>NO URUT</td><td style="text-align:center;"><?= $row['id'] ?></td></tr>
                                     <td>NOMOR INDUK KARYAWAN</td><td style="text-align:center;"><?= $row['nomor_induk_karyawan'] ?></td></tr>
                                     <td>UNIT</td><td style="text-align:center;"><?= $row['unit'] ?></td></tr>
                                     <td>NAMA LENGKAP</td><td style="text-align:center;"><?= $row['nama_lengkap'] ?></td></tr>
@@ -48,7 +48,15 @@ while($row = mysqli_fetch_array($query)){
                                     <td>BPJS KESEHATAN</td><td style="text-align:center;"><?= $row['bpjs_kesehatan'] ?></td></tr>
                                     <td>PENDIDIKAN TERAKHIR</td><td style="text-align:center;"><?= $row['pendidikan_terakhir'] ?></td></tr>
                                     <td>JURUSAN</td><td style="text-align:center;"><?= $row['jurusan'] ?></td></tr>
-                                    <td>LAMA KERJA</td><td style="text-align:center;"><?= $row['lama_kerja'] ?></td></tr>
+                                    <td>LAMA KERJA</td><td style="text-align:center;">
+                                    <?php
+                                        $date1 = strtotime($row['tanggal_mulai_tugas']);
+                                        $date2 = strtotime(date("Y-m-d"));
+                                        $sec = $date2-$date1;
+                                        echo $sec/86400;
+                                          ?>
+                                          hari    
+                                </td></tr>
                                     <td>ALAMAT SEKARANG</td><td style="text-align:center;"><?= $row['alamat_sekarang'] ?></td></tr>
                                     <td>TELP/NO.HP</td><td style="text-align:center;"><?= $row['nohp'] ?></td></tr>
                                     <td>AGAMA</td><td style="text-align:center;"><?= $row['agama'] ?></td></tr>
