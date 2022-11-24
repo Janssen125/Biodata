@@ -12,7 +12,8 @@ while($row = mysqli_fetch_array($query)){
     <div class="row justify-content-center">
         <div class="col-md-11">
             <div class="card" style="margin-top:50px;">
-                <div class="card-header" style="border-bottom:black solid 1px;">View Biodata<br>
+                <div class="card-header" style="border-bottom:black solid 1px;">View Biodata
+                <a href="export/index.php?id=<?= $id ?>" class="btn btn-outline-danger" style="float:right;">Export PDF</a>
                 </div>
                 <div class="card-body" style="margin-top:1em;">
                     <div class="table-responsive" style="margin-top:3em;">
