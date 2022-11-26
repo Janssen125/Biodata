@@ -141,7 +141,7 @@ include "../header.php";
                                     if($_SESSION['hak_akses'] == "Admin"){
                                     ?>
                                     <td>
-                                        <a onclick="if(confirm('Yakin Ingin Menghapus Data Ini?') == true){location.href = 'proses/delete.php?id=<?= $row['id']; ?>';}else{alert('Proses hapus gagal');}" class="btn btn-outline-danger">
+                                        <a onclick="if(confirm('Yakin Ingin Menghapus Data Ini?') == true){location.href = '../../proses/biodata/delete.php?id=<?= $row['id']; ?>';}else{alert('Proses hapus gagal');}" class="btn btn-outline-danger">
                                             Delete
                                         </a>
                                     </td>
