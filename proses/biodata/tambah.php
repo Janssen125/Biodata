@@ -12,7 +12,6 @@ if(isset($_POST['submit'])){
    $skpwt = $_POST['skpwt/sk'];
    $tempat_lahir = $_POST['tempat_lahir'];
    $tanggal_lahir = $_POST['tanggal_lahir'];
-   $umur = $_POST['umur'];
    $medical_check_up = $_POST['medical_check_up'];
    $status_kk = $_POST['status_kk'];
    $nik_ktp  = $_POST['nik_ktp'];
@@ -49,7 +48,7 @@ if(isset($_POST['submit'])){
 //(id, no_urut, nomor_induk_karyawan, unit, nama_lengkap, jenis_kelamin, jabatan, tanggal_mulai_tugas, status_karyawan, skpwt/sk, tempat_lahir, tanggal_lahir, umur, medical_check_up, status_kk, nik_ktp, alamat_ktp, no_npwp, alamat_npwp, rekening_sinarmas, bpjs_tenaga_kerja, bpjs_kesehatan, pendidikan_terakhir, jurusan, lama_kerja, alamat_sekarang, nohp, agama, golongan_darah, email_sekolah, email_pribadi, status_relawan, id_relawan, resign, gambar)
     if(is_uploaded_file($tmpgambar)){
         if(move_uploaded_file($tmpgambar, $lokgambar.$namagambar)){
-            $query = mysqli_query($db, "INSERT INTO biodata VALUES('','$nomor_induk_karyawan','$unit','$nama_lengkap','$jenis_kelamin','$jabatan','$tanggal_mulai_tugas','$status_karyawan','$skpwt','$tempat_lahir','$tanggal_lahir','$umur','$medical_check_up','$status_kk','$nik_ktp','$alamat_ktp','$no_npwp','$alamat_npwp','$rekening_sinarmas','$bpjs_tenaga_kerja','$bpjs_kesehatan','$pendidikan_terakhir','$jurusan','$alamat_sekarang','$nohp','$agama','$golongan_darah','$email_sekolah','$email_pribadi','$status_relawan','$id_relawan','$resign','$namagambar')");
+            $query = mysqli_query($db, "INSERT INTO biodata VALUES('','$nomor_induk_karyawan','$unit','$nama_lengkap','$jenis_kelamin','$jabatan','$tanggal_mulai_tugas','$status_karyawan','$skpwt','$tempat_lahir','$tanggal_lahir','$medical_check_up','$status_kk','$nik_ktp','$alamat_ktp','$no_npwp','$alamat_npwp','$rekening_sinarmas','$bpjs_tenaga_kerja','$bpjs_kesehatan','$pendidikan_terakhir','$jurusan','$alamat_sekarang','$nohp','$agama','$golongan_darah','$email_sekolah','$email_pribadi','$status_relawan','$id_relawan','$resign','$namagambar')");
             if($query){
                 echo "<script>alert('Daftar Biodata Berhasil Diupload!');location.href=('../../frontend/dashboard/')</script>";
             }
@@ -96,7 +95,7 @@ if(isset($_POST['submit'])){
     }
     else{
 
-    $query = mysqli_query($db, "INSERT INTO biodata VALUES('','$no_urut','$nomor_induk_karyawan','$unit','$nama_lengkap','$jenis_kelamin','$jabatan','$tanggal_mulai_tugas','$status_karyawan','$skpwt','$tempat_lahir','$tanggal_lahir','$umur','$medical_check_up','$status_kk','$nik_ktp','$alamat_ktp','$no_npwp','$alamat_npwp','$rekening_sinarmas','$bpjs_tenaga_kerja','$bpjs_kesehatan','$pendidikan_terakhir','$jurusan','$lama_kerja','$alamat_sekarang','$nohp','$agama','$golongan_darah','$email_sekolah','$email_pribadi','$status_relawan','$id_relawan','$resign','')");
+    $query = mysqli_query($db, "INSERT INTO biodata VALUES('','$no_urut','$nomor_induk_karyawan','$unit','$nama_lengkap','$jenis_kelamin','$jabatan','$tanggal_mulai_tugas','$status_karyawan','$skpwt','$tempat_lahir','$tanggal_lahir','$medical_check_up','$status_kk','$nik_ktp','$alamat_ktp','$no_npwp','$alamat_npwp','$rekening_sinarmas','$bpjs_tenaga_kerja','$bpjs_kesehatan','$pendidikan_terakhir','$jurusan','$lama_kerja','$alamat_sekarang','$nohp','$agama','$golongan_darah','$email_sekolah','$email_pribadi','$status_relawan','$id_relawan','$resign','')");
     echo "<script>alert('Daftar Biodata Berhasil Diupload!'); location.href=('../../frontend/dashboard/')</script>";
     }
 }

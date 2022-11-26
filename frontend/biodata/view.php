@@ -37,7 +37,15 @@ while($row = mysqli_fetch_array($query)){
                                     <td>NO. SKPWT/SK</td><td style="text-align:center;"><?= $row['skpwt/sk'] ?></td></tr>
                                     <td>TEMPAT LAHIR</td><td style="text-align:center;"><?= $row['tempat_lahir'] ?></td></tr>
                                     <td>TANGGAL LAHIR</td><td style="text-align:center;"><?= $row['tanggal_lahir'] ?></td></tr>
-                                    <td>UMUR</td><td style="text-align:center;"><?= $row['umur'] ?></td></tr>
+                                    <td>UMUR</td><td style="text-align:center;">
+                                        <?php
+                                        $date1 = strtotime($row['tanggal_lahir']);
+                                        $date2 = strtotime(date("Y-m-d"));
+                                        $year = $date2-$date1;
+                                        echo round($year/31557600,0,PHP_ROUND_HALF_DOWN);
+                                          ?>
+                                          Tahun    
+                                </td></tr>
                                     <td>MEDICAL CHECK UP (MCU) TERAKHIR</td><td style="text-align:center;"><?= $row['medical_check_up'] ?></td></tr>
                                     <td>STATUS KK</td><td style="text-align:center;"><?= $row['status_kk'] ?></td></tr>
                                     <td>NIK KTP</td><td style="text-align:center;"><?= $row['nik_ktp'] ?></td></tr>
@@ -54,7 +62,7 @@ while($row = mysqli_fetch_array($query)){
                                         $date1 = strtotime($row['tanggal_mulai_tugas']);
                                         $date2 = strtotime(date("Y-m-d"));
                                         $sec = $date2-$date1;
-                                        echo $sec/86400;
+                                        echo round($sec/86400,0,PHP_ROUND_HALF_DOWN);
                                           ?>
                                           hari    
                                 </td></tr>

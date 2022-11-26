@@ -99,7 +99,15 @@ include "../header.php";
                                     <td><?= $row['skpwt/sk'] ?></td>
                                     <td><?= $row['tempat_lahir'] ?></td>
                                     <td><?= $row['tanggal_lahir'] ?></td>
-                                    <td><?= $row['umur'] ?></td>
+                                    <td>
+                                        <?php
+                                        $date1 = strtotime($row['tanggal_lahir']);
+                                        $date2 = strtotime(date("Y-m-d"));
+                                        $year = $date2-$date1;
+                                        echo round($year/31557600,0,PHP_ROUND_HALF_DOWN);
+                                          ?>
+                                          Tahun
+                                          </td>
                                     <td><?= $row['medical_check_up'] ?></td>
                                     <td><?= $row['status_kk'] ?></td>
                                     <td><?= $row['nik_ktp'] ?></td>
@@ -116,7 +124,7 @@ include "../header.php";
                                         $date1 = strtotime($row['tanggal_mulai_tugas']);
                                         $date2 = strtotime(date("Y-m-d"));
                                         $sec = $date2-$date1;
-                                        echo $sec/86400;
+                                        echo round($sec/86400,0,PHP_ROUND_HALF_DOWN);
                                           ?>
                                           hari
                                           </td>
