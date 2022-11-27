@@ -95,11 +95,6 @@ if($jmlh > 0){
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="">Umur</label>
-                            <input type="text" class="form-control" name="umur" maxlength=3 required>
-                        </div>
-                        <br>
-                        <div class="form-group">
                             <label for="">Medical Check Up (MCU) Terakhir</label>
                             <input type="date" class="form-control" name="medical_check_up" required>
                         </div>
