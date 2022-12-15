@@ -131,14 +131,14 @@ include '../../config/koneksi.php';
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
+                        <a href="#" class="menu-link menu-toggle" data-bs-toggle="collapse" data-bs-target=".datalist" aria-expanded="false" aria-controls="list1 list2">
                             <i class="menu-icon tf-icons bx bx-detail"></i>
                             <div data-i18n="Layouts">List</div>
                         </a>
                         <?php
           if($_SESSION['hak_akses'] != "User"){
           ?>
-                        <ul class="">
+                        <ul class="datalist" id="list1">
                             <li class="menu-item">
                                 <a href="../user/" class="menu-link"><i class='bx bxs-user-account'></i>&nbsp&nbsp&nbsp
                                     <div data-i18n="Without menu">Data User</div>
@@ -148,7 +148,7 @@ include '../../config/koneksi.php';
                         <?php
         }
             ?>
-                        <ul class="">
+                        <ul class="datalist" id="list2">
                             <li class="menu-item">
                                 <a href="../biodata/" class="menu-link"><i class='bx bxs-group'></i>&nbsp&nbsp&nbsp
                                     <div data-i18n="Without menu">Data Biodata</div>
@@ -157,7 +157,7 @@ include '../../config/koneksi.php';
                         </ul>
 
                     <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
+                        <a href="#" class="menu-link menu-toggle" data-bs-toggle="collapse" data-bs-target=".biodatalist" aria-expanded="false" aria-controls="biodata1">
                             <i class='bx bxs-user-detail'>
                             </i>&nbsp&nbsp&nbsp
                             <div data-i18n="Layouts">Biodata Kamu</div>
@@ -178,47 +178,44 @@ include '../../config/koneksi.php';
                                 echo "Jika Ingin Tambah Biodata, Silahkan ke List Biodata";
                             }
                         ?>
-                        </li>
-                        </ul>
-                        <?php
+                    </li>
+                </ul>
+                <?php
                         }
                         else{
                         ?>
-                        <ul>
-                            <li class="menu-item">
-                                <a href="../formisi/" class="menu-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-journal-bookmark" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
-                                        <path
-                                            d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
-                                        <path
-                                            d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
-                                    </svg>
-                                    &nbsp&nbsp&nbsp
-                                    <div data-i18n="Without navbar">Form Pengisian Biodata</div>
-                                </a>
-                            </li>
-                        </ul>
-                        <?php
-                        }
-                        ?>
-                    </li>
+                <ul class="biodatalist" id="biodata1">
                     <li class="menu-item">
-                            <a href="#" class="menu-link menu-toggle">
+                        <a href="../formisi/" class="menu-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-printer-fill" viewBox="0 0 16 16">
+                                class="bi bi-journal-bookmark" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
                                 <path
-                                    d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z" />
+                                    d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
                                 <path
-                                    d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+                                    d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
                             </svg>
                             &nbsp&nbsp&nbsp
-                            <div data-i18n="Without navbar">Print</div>
+                            <div data-i18n="Without navbar">Form Pengisian Biodata</div>
+                        </a>
+                    </li>
+                </ul>
+                <?php
+                        }
+                        ?>
+                </li>
+                <li class="menu-item">
+                            <a href="#" class="menu-link menu-toggle" data-bs-toggle="collapse" data-bs-target=".exportlist" aria-expanded="false" aria-controls="export1 export2 export3 export4 export5 export6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+</svg>
+                            &nbsp&nbsp&nbsp
+                            <div data-i18n="Without navbar">Export/Print</div>
                             </a>
                             <ul>
-                                <li class="menu-item">
+                                <li class="menu-item exportlist" id="export1">
                                     <a href="#" class="menu-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
   <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
@@ -228,7 +225,7 @@ include '../../config/koneksi.php';
 <div data-i18n="Without navbar">Per Unit</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item exportlist" id="export2">
                                     <a href="#" class="menu-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
   <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
@@ -238,7 +235,7 @@ include '../../config/koneksi.php';
 <div data-i18n="Without navbar">Per Status Karyawan</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item exportlist" id="export3">
                                     <a href="#" class="menu-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
   <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
@@ -248,7 +245,7 @@ include '../../config/koneksi.php';
 <div data-i18n="Without navbar">Per Agama</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item exportlist" id="export4">
                                     <a href="#" class="menu-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
   <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
@@ -258,7 +255,7 @@ include '../../config/koneksi.php';
 <div data-i18n="Without navbar">Per Golongan Darah</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item exportlist" id="export5">
                                     <a href="#" class="menu-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
   <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
@@ -268,7 +265,7 @@ include '../../config/koneksi.php';
 <div data-i18n="Without navbar">Per Status Relawan</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item exportlist" id="export6">
                                     <a href="#" class="menu-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
   <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
@@ -281,7 +278,6 @@ include '../../config/koneksi.php';
                             </ul>
                 </li>
                 </ul>
-
                 <!-- Components -->
             </aside>
             <!-- / Menu -->
@@ -293,30 +289,22 @@ include '../../config/koneksi.php';
                 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0);" data-bs-toggle="dropdown">
                             <i class="bx bx-menu bx-sm"></i>
                         </a>
                     </div>
 
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-                        <!-- Search -->
-                        <div class="navbar-nav align-items-center">
-                            <div class="nav-item d-flex align-items-center">
-                            </div>
-                        </div>
-                        <!-- /Search -->
-
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <ul class="navbar-nav flex-row align-items-center ms-auto">
                                 <!-- Place this tag where you want the button to render. -->
                                 <li class="fw-semibold d-block">
-                                        Welcome, <?= $_SESSION['nama'] ?>
+                                    Welcome, <?= $_SESSION['nama'] ?>
                                 </li>
 
                                 <!-- User -->
                                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                        data-bs-toggle="dropdown">
+                                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                         <div class="avatar avatar-online">
                                             <img src="../../assets/images/avatar.png" alt
                                                 class="w-px-40 h-auto rounded-circle" />
