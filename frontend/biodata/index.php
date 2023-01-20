@@ -69,6 +69,9 @@ include "../header.php";
                                     <th>Delete</th>
                                     <?php
                                     }
+                                    ?>
+                                    <th>Berkas</th>
+                                    <?php
                                 }
                                     ?>
                                 </tr>
@@ -155,6 +158,9 @@ include "../header.php";
                                     </td>
                                     <?php
                                     }
+                                    ?>
+                                    <td><a href="../berkas/index.php?id=<?= $row['id']; ?>" class="btn btn-outline-secondary">Berkas</a></td>
+                                    <?php
                                 }
                                     ?>
                                 </tr>
