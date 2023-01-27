@@ -66,7 +66,28 @@ if($jmlh > 0){
                         <br>
                         <div class="form-group">
                             <label for="">Jabatan</label>
-                            <input type="text" class="form-control" name="jabatan" maxlength=20 required>
+                            <select name="jabatan" id="" class="form-select" required>
+                            <option value="" hidden>Pilih</option>
+                            <option value="Kepala Sekolah">Kepala Sekolah</option>
+                            <option value="Kordinator Kurikulum">Kordinator Kurikulum</option>
+                            <option value="Kordinator Kesiswaan">Kordinator Kesiswaan</option>
+                            <option value="Kordinator Prasarana">Kordinator Karana Prasarana</option>
+                            <option value="Kordinator B Inggris">Kordinator B Inggris</option>
+                            <option value="Kordinator B Mandarin">Kordinator B Mandarin</option> 
+                            <option value="Kordinator Humanis">Kordinator Humanis</option>
+                            <option value="Kepala IT">Kepala IT</option>
+                            <option value="Kepala Finance & Accounting">Kepala Finance & Accounting</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="HRD & Sekretariat">HRD & Sekretariat</option> 
+                            <option value="Kepala Perpustakaan">Kepala Perpustakaan</option> 
+                            <option value="Kepala GA">Kepala GA</option>
+                            <option value="Kordinator Akutansi">Kordinator Akuntansi</option> 
+                            <option value="Kordinator Perkantoran">Kordinator Perkantoran</option>
+                            <option value="Kordinator Rekayasa Perangkat Lunak RPL">Kordinator Rekayasa Perangkat Lunak RPL</option>
+                            <option value="Guru">Guru</option>
+                            <option value="Staff">Staff</option>
+                            <option value="Penunjang">Penunjang</option>
+                            </select>
                         </div>
                         <br>
                         <div class="form-group">
@@ -76,7 +97,12 @@ if($jmlh > 0){
                         <br>
                         <div class="form-group">
                             <label for="">Status Karyawan</label>
-                            <input type="text" class="form-control" name="status_karyawan" maxlength=10 required>
+                            <select name="status_karyawan" id="" class="form-select" required>
+                            <option value="" hidden>Pilih</option>
+                                <option value="Tetap">Tetap</option>
+                                <option value="Pencobaan">Pencobaan</option>
+                                <option value="Kontrak">Kontrak</option>
+                            </select>
                         </div>
                         <br>
                         <div class="form-group">
@@ -101,6 +127,12 @@ if($jmlh > 0){
                         <br>
                         <div class="form-group">
                             <label for="">Status KK</label>
+                            <select name="status_kk" id="" class="form-select" required>
+                                <option value="TK">Tidak Kawin</option>
+                                <option value="K">Kawin</option>
+                                <option value="K1">Tanggunan 1</option>
+                                <option value="K2">Tanggunan 2 dst</option>
+                            </select>
                             <input type="text" class="form-control" name="status_kk" maxlength=3 required>
                         </div>
                         <br>
@@ -232,7 +264,12 @@ if($jmlh > 0){
                         <br>
                         <div class="form-group">
                             <label for="">Status Relawan</label>
-                            <input type="text" class="form-control" name="status_relawan" maxlength=10 required>
+                            <select name="status_relawan" id="" class="form-select" required>
+                            <option value="" hidden>Pilih</option>
+                                <option value="AP">AP</option>
+                                <option value="APL">APL</option>
+                                <option value="Komite">Komite</option>
+                            </select>
                         </div>
                         <br>
                         <div class="form-group">

@@ -12,7 +12,9 @@ if($now > $_SESSION['expire']){
 
 include '../../../config/koneksi.php';
 $no = 1;
-$rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY status_relawan ASC");
+$unique = $_GET['unique'];
+$rows = mysqli_query($db, "SELECT * FROM biodata WHERE status_relawan = $unique ORDER BY status_relawan ASC");
+$te = mysqli_fetch_array($rows);
 ?>
 <!DOCTYPE html>
 <html class='light-style layout-menu-fixed' dir='ltr'
@@ -70,6 +72,7 @@ $rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY status_relawan ASC");
                             <tbody>
                         
                             <?php
+                            if($te != NULL){
                             foreach($rows as $row) {
                                 ?>
                                     <tr>
@@ -84,6 +87,15 @@ $rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY status_relawan ASC");
                                 </tr>
                                 <?php   
                             }
+                        }
+                        else{
+                            ?>
+                            
+                            <tr>
+                                <td colspan=8  style='text-align:center;'>Tidak Ada Data</td>
+                                </tr>
+                            <?php
+                        }
                             ?>
                             </tbody>
                         </table>

@@ -114,53 +114,54 @@ include '../../config/koneksi.php';
                         <span class="app-brand-text demo menu-text fw-bolder ms-2">Biodata</span>
                     </a>
 
-                    <a href="javascript:void(0);"
-                        class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
-                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+          </a>
                 </div>
 
                 <div class="menu-inner-shadow"></div>
 
-                <ul class="menu-inner py-1">
+                <ul class="menu-inner py-1 overflow-auto">
                     <!-- Dashboard -->
                     <li class="menu-item">
                         <a href="../dashboard/" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Dashboard</div>
+                            <div data-i18n="Dashboard">Dashboard</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle" data-bs-toggle="collapse" data-bs-target=".datalist" aria-expanded="false" aria-controls="list1 list2">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div data-i18n="Layouts">List</div>
+                            <div data-i18n="List">List</div>
                         </a>
                         <?php
-          if($_SESSION['hak_akses'] != "User"){
-          ?>
-                        <ul class="datalist" id="list1">
+                         if($_SESSION['hak_akses'] != "User"){
+                          ?> 
+                        <ul class="menu-sub">
                             <li class="menu-item">
                                 <a href="../user/" class="menu-link"><i class='bx bxs-user-account'></i>&nbsp&nbsp&nbsp
-                                    <div data-i18n="Without menu">Data User</div>
+                                    <div data-i18n="Data User">Data User</div>
                                 </a>
                             </li>
                         </ul>
                         <?php
-        }
-            ?>
-                        <ul class="datalist" id="list2">
+                        }
+                        ?>
+                        
+                        <ul class="menu-sub">
                             <li class="menu-item">
                                 <a href="../biodata/" class="menu-link"><i class='bx bxs-group'></i>&nbsp&nbsp&nbsp
-                                    <div data-i18n="Without menu">Data Biodata</div>
+                                    <div data-i18n="Data Biodata">Data Biodata</div>
                                 </a>
                             </li>
                         </ul>
+                    </li>
 
                     <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle" data-bs-toggle="collapse" data-bs-target=".biodatalist" aria-expanded="false" aria-controls="biodata1">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class='bx bxs-user-detail'>
                             </i>&nbsp&nbsp&nbsp
-                            <div data-i18n="Layouts">Biodata Kamu</div>
+                            <div data-i18n="Biodata Kamu">Biodata Kamu</div>
                         </a>
 
                         <?php
@@ -184,7 +185,7 @@ include '../../config/koneksi.php';
                         }
                         else{
                         ?>
-                <ul class="biodatalist" id="biodata1">
+                <ul class="menu-sub">
                     <li class="menu-item">
                         <a href="../formisi/" class="menu-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -197,7 +198,7 @@ include '../../config/koneksi.php';
                                     d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
                             </svg>
                             &nbsp&nbsp&nbsp
-                            <div data-i18n="Without navbar">Form Pengisian Biodata</div>
+                            <div data-i18n="Form Pengisian Biodata">Form Pengisian Biodata</div>
                         </a>
                     </li>
                 </ul>
@@ -205,77 +206,181 @@ include '../../config/koneksi.php';
                         }
                         ?>
                 </li>
+                <li class="menu-header small text-uppercase">
+                            <div data-i18n="Export/Print">Export/Print</div>
+            </li>
                 <li class="menu-item">
-                            <a href="#" class="menu-link menu-toggle" data-bs-toggle="collapse" data-bs-target=".exportlist" aria-expanded="false" aria-controls="export1 export2 export3 export4 export5 export6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-</svg>
-                            &nbsp&nbsp&nbsp
-                            <div data-i18n="Without navbar">Export/Print</div>
-                            </a>
-                            <ul>
-                                <li class="menu-item exportlist" id="export1">
-                                    <a href="../biodata/export/unit.php" class="menu-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
-  <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
-  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
-</svg>
-&nbsp&nbsp&nbsp
-<div data-i18n="Without navbar">Per Unit</div>
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-label"></i>
+                            <div data-i18n="Per Unit">Per Unit</div>
+                        </a>
+                        <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="../biodata/export/unit.php?unique='TK'" class="menu-link">
+                                        <div data-i18n="TK">TK</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item exportlist" id="export2">
-                                    <a href="../biodata/export/statuskar.php" class="menu-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
-  <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
-  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
-</svg>
-&nbsp&nbsp&nbsp
-<div data-i18n="Without navbar">Per Status Karyawan</div>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/unit.php?unique='SD'" class="menu-link">
+                                        <div data-i18n="SD">SD</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item exportlist" id="export3">
-                                    <a href="../biodata/export/agama.php" class="menu-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
-  <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
-  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
-</svg>
-&nbsp&nbsp&nbsp
-<div data-i18n="Without navbar">Per Agama</div>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/unit.php?unique='SMP'" class="menu-link">
+                                        <div data-i18n="SMP">SMP</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item exportlist" id="export4">
-                                    <a href="../biodata/export/goldar.php" class="menu-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
-  <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
-  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
-</svg>
-&nbsp&nbsp&nbsp
-<div data-i18n="Without navbar">Per Golongan Darah</div>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/unit.php?unique='SMA'" class="menu-link">
+                                        <div data-i18n="SMA">SMA</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item exportlist" id="export5">
-                                    <a href="../biodata/export/statusrel.php" class="menu-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
-  <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
-  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
-</svg>
-&nbsp&nbsp&nbsp
-<div data-i18n="Without navbar">Per Status Relawan</div>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/unit.php?unique='SMK'" class="menu-link">
+                                        <div data-i18n="SMK">SMK</div>
                                     </a> 
                                 </li>
-                                <li class="menu-item exportlist" id="export6">
-                                    <a href="../biodata/export/statusker.php" class="menu-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
-  <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
-  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
-</svg>
-&nbsp&nbsp&nbsp
-<div data-i18n="Without navbar">Per Status Kerja</div>
+                        </ul>
+                </li>
+                <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-label"></i>
+                            <div data-i18n="Per Status Karyawan">Per Status Karyawan</div>
+                        </a>
+                        <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="../biodata/export/statuskar.php?unique='Tetap'" class="menu-link">
+                                        <div data-i18n="Tetap">Tetap</div>
                                     </a> 
                                 </li>
-                            </ul>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/statuskar.php?unique='Pencobaan'" class="menu-link">
+                                        <div data-i18n="Pencobaan">Pencobaan</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/statuskar.php?unique='Kontrak'" class="menu-link">
+                                        <div data-i18n="Kontrak">Kontrak</div>
+                                    </a> 
+                                </li>
+                        </ul>
+                </li>
+                <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-label"></i>
+                            <div data-i18n="Per Agama">Per Agama</div>
+                        </a>
+                        <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="../biodata/export/agama.php?unique='Islam'" class="menu-link">
+                                        <div data-i18n="Islam">Islam</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/agama.php?unique='Katolik'" class="menu-link">
+                                        <div data-i18n="Katolik">Katolik</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/agama.php?unique='Kristen'" class="menu-link">
+                                        <div data-i18n="Kristen">Kristen</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/agama.php?unique='Buddha'" class="menu-link">
+                                        <div data-i18n="Buddha">Buddha</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/agama.php?unique='Hindu'" class="menu-link">
+                                        <div data-i18n="Hindu">Hindu</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/agama.php?unique='Konghucu'" class="menu-link">
+                                        <div data-i18n="Konghucu">Konghucu</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/agama.php?unique='Lainnya'" class="menu-link">
+                                        <div data-i18n="Lainnya">Lainnya</div>
+                                    </a> 
+                                </li>
+                        </ul>
+                </li>
+                <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-label"></i>
+                            <div data-i18n="Per Golongan Darah">Per Golongan Darah</div>
+                        </a>
+                        <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="../biodata/export/goldar.php?unique='A'" class="menu-link">
+                                        <div data-i18n="A">A</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/goldar.php?unique='B'" class="menu-link">
+                                        <div data-i18n="B">B</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/goldar.php?unique='AB'" class="menu-link">
+                                        <div data-i18n="AB">AB</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/goldar.php?unique='O'" class="menu-link">
+                                        <div data-i18n="O">O</div>
+                                    </a> 
+                                </li>
+                        </ul>
+                </li>
+                <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-label"></i>
+                            <div data-i18n="Per Status Relawan">Per Status Relawan</div>
+                        </a>
+                        <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="../biodata/export/statusrel.php?unique='AP'" class="menu-link">
+                                        <div data-i18n="AP">AP</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/statusrel.php?unique='APL'" class="menu-link">
+                                        <div data-i18n="APL">APL</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/statusrel.php?unique='Komite'" class="menu-link">
+                                        <div data-i18n="Komite">Komite</div>
+                                    </a> 
+                                </li>
+                        </ul>
+                </li>
+                <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-label"></i>
+                            <div data-i18n="Per Status Kerja">Per Status Kerja</div>
+                        </a>
+                        <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="../biodata/export/statusker.php?unique='AKTIF'" class="menu-link">
+                                        <div data-i18n="Aktif">Aktif</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/statusker.php?unique='RESIGN'" class="menu-link">
+                                        <div data-i18n="Resign">Resign</div>
+                                    </a> 
+                                </li>
+                                <li class="menu-item">
+                                    <a href="../biodata/export/statusker.php?unique='MATI'" class="menu-link">
+                                        <div data-i18n="Mati">Mati</div>
+                                    </a> 
+                                </li>
+                        </ul>
                 </li>
                 </ul>
                 <!-- Components -->

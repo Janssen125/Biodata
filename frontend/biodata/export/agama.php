@@ -12,7 +12,9 @@ if($now > $_SESSION['expire']){
 
 include '../../../config/koneksi.php';
 $no = 1;
-$rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY agama ASC");
+$unique = $_GET['unique'];
+$rows = mysqli_query($db, "SELECT * FROM biodata WHERE agama = $unique ORDER BY agama ASC");
+$he = mysqli_fetch_array($rows);
 ?>
 <!DOCTYPE html>
 <html class='light-style layout-menu-fixed' dir='ltr'
@@ -20,7 +22,7 @@ $rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY agama ASC");
     <head>
         <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
         <?php
-        $title = "Unit";
+        $title = "Agama";
         require 'js/htmlpdf.php';
         ?>
                                 <script>
@@ -86,6 +88,7 @@ $rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY agama ASC");
                             <tbody>
                         
                             <?php
+                            if($he != NULL){
                             foreach($rows as $row) {
                                 ?>
                                     <tr>
@@ -101,6 +104,15 @@ $rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY agama ASC");
                                 </tr>
                                 <?php   
                             }
+                        }
+                        else{
+                            ?>
+                            
+                            <tr>
+                                <td colspan=8  style='text-align:center;'>Tidak Ada Data</td>
+                                </tr>
+                            <?php
+                        }
                             ?>
                             </tbody>
                         </table>

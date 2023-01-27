@@ -12,7 +12,9 @@ if($now > $_SESSION['expire']){
 
 include '../../../config/koneksi.php';
 $no = 1;
-$rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY unit ASC");
+$unique = $_GET['unique'];
+$rows = mysqli_query($db, "SELECT * FROM biodata WHERE unit = $unique ORDER BY unit ASC");
+$te = mysqli_fetch_array($rows);
 ?>
 <!DOCTYPE html>
 <html class='light-style layout-menu-fixed' dir='ltr'
@@ -58,7 +60,7 @@ $rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY unit ASC");
                                 <th>
                                 No
                                 </th>
-                                <th>
+                                <th bgcolor="lightgrey">
                                 Unit
                                 </th>
                                 <th>
@@ -83,11 +85,12 @@ $rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY unit ASC");
                             <tbody>
                         
                             <?php
+                            if($te != NULL){
                             foreach($rows as $row) {
                                 ?>
                                     <tr>
                                     <td style='text-align:center;'><?= $no++ ?></td>
-                                    <td style='text-align:center;'><?= $row['unit'] ?></td>
+                                    <td style='text-align:center;background-color:lightgrey;'><?= $row['unit'] ?></td>
                                     <td style='text-align:center;'><?= $row['nama_lengkap'] ?></td>
                                     <td style='text-align:center;'><?= $row['nomor_induk_karyawan'] ?></td>
                                     <td style='text-align:center;'><?= $row['jabatan'] ?></td>
@@ -97,6 +100,16 @@ $rows = mysqli_query($db, "SELECT * FROM biodata ORDER BY unit ASC");
                                 </tr>
                                 <?php   
                             }
+                        }
+                        else{
+                            
+                            ?>
+                            
+                            <tr>
+                                <td colspan=8  style='text-align:center;'>Tidak Ada Data</td>
+                                </tr>
+                            <?php
+                        }
                             ?>
                             </tbody>
                         </table>
