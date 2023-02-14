@@ -1,0 +1,61 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "Guru",
+   "children": [
+    {
+     "name": "TK", "value":3
+    },
+    {
+     "name": "SD", "value":4
+    },
+    {
+     "name": "SMP", "value":1
+    },
+    {
+     "name": "SMA", "value":2
+    },
+    {
+     "name": "SMK", "value":7
+    }
+    ]}
+  ,
+  
+  {
+    "name": "Back Office",
+    "children": [
+     {
+      "name": "Direktur", "value":2
+    },
+    {
+     "name": "Wakil Direktur", "value":3
+   },
+   {
+    "name": "HRD & Sekretariat", "value":4
+  },
+  {
+   "name": "Kepala GA", "value":5
+ },
+ {
+  "name": "Kepala IT", "value":6
+},
+{
+ "name": "Kepala Finance & Accounting", "value":2
+},
+{
+ "name": "Kepala Perpustakaan", "value":6
+},
+{
+ "name": "Staff", "value":6
+},
+{
+ "name": "Marketing", "value":2
+},
+{
+ "name": "Penunjang", "value":1
+}
+    ]
+}
+ ]
+}

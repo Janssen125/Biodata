@@ -255,7 +255,7 @@ include '../../config/koneksi.php';
                                 </li>
                                 <li class="menu-item">
                                     <a href="../biodata/export/statuskar.php?unique='Pencobaan'" class="menu-link">
-                                        <div data-i18n="Pencobaan">Pencobaan</div>
+                                        <div data-i18n="Percobaan">Percobaan</div>
                                     </a> 
                                 </li>
                                 <li class="menu-item">
