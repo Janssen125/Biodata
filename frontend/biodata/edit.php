@@ -49,8 +49,31 @@ while($row = mysqli_fetch_array($query)){
                         <br>
                         <div class="form-group">
                             <label for="">Jabatan</label>
-                            <input type="text" class="form-control" name="jabatan" value="<?= $row['jabatan'] ?>" maxlength=20 required>
-                        </div>
+                            <select name="jabatan" id="" class="form-select" required>
+                            <option value="" hidden>Pilih</option>
+                            <option value="Direktur" <?php if($row['jabatan'] == "Direktur"){echo "selected";}; ?>>Direktur</option>
+                            <option value="Wakil Direktur" <?php if($row['jabatan'] == "Wakil Direktur"){echo "selected";}; ?>>Wakil Direktur</option>
+                            <option value="HRD & Sekretariat" <?php if($row['jabatan'] == "HRD & Sekretariat"){echo "selected";}; ?>>HRD & Sekretariat</option>
+                            <option value="Kepala GA" <?php if($row['jabatan'] == "Kepala GA"){echo "selected";}; ?>>Kepala GA</option> 
+                            <option value="Kepala IT" <?php if($row['jabatan'] == "Kepala IT"){echo "selected";}; ?>>Kepala IT</option>
+                            <option value="Kepala Finance & Accounting" <?php if($row['jabatan'] == "Kepala Finance & Accounting"){echo "selected";}; ?>>Kepala Finance & Accounting</option>
+                            <option value="Kepala Perpustakaan" <?php if($row['jabatan'] == "Kepala Perpustakaan"){echo "selected";}; ?>>Kepala Perpustakaan</option> 
+                            <option value="Kepala Sekolah" <?php if($row['jabatan'] == "Kepala Sekolah"){echo "selected";}; ?>>Kepala Sekolah</option>
+                            <option value="Kordinator Kesiswaan" <?php if($row['jabatan'] == "Kordinator Kesiswaan"){echo "selected";}; ?>>Kordinator Kesiswaan</option>
+                            <option value="Kordinator Kurikulum" <?php if($row['jabatan'] == "Kordinator Kurikulum"){echo "selected";}; ?>>Kordinator Kurikulum</option>
+                            <option value="Kordinator Prasarana" <?php if($row['jabatan'] == "Kordinator Prasarana"){echo "selected";}; ?>>Kordinator Sarana Prasarana</option>
+                            <option value="Kordinator Akutansi" <?php if($row['jabatan'] == "Kordinator Akutansi"){echo "selected";}; ?>>Kordinator Akuntansi</option> 
+                            <option value="Kordinator Perkantoran" <?php if($row['jabatan'] == "Kordinator Perkantoran"){echo "selected";}; ?>>Kordinator Perkantoran</option>
+                            <option value="Kordinator Rekayasa Perangkat Lunak RPL" <?php if($row['jabatan'] == "Kordinator Rekayasa Perangkat Lunak RPL"){echo "selected";}; ?>>Kordinator Rekayasa Perangkat Lunak RPL</option>
+                            <option value="Kordinator Humanis" <?php if($row['jabatan'] == "Kordinator Humanis"){echo "selected";}; ?>>Kordinator Humanis</option>
+                            <option value="Kordinator B Inggris" <?php if($row['jabatan'] == "Kordinator B Inggris"){echo "selected";}; ?>>Kordinator B Inggris</option>
+                            <option value="Kordinator B Mandarin" <?php if($row['jabatan'] == "Kordinator B Mandarin"){echo "selected";}; ?>>Kordinator B Mandarin</option> 
+                            <option value="Guru" <?php if($row['jabatan'] == "Guru"){echo "selected";}; ?>>Guru</option>
+                            <option value="Staff" <?php if($row['jabatan'] == "Staff"){echo "selected";}; ?>>Staff</option>
+                            <option value="Marketing" <?php if($row['jabatan'] == "Marketing"){echo "selected";}; ?>>Marketing</option>
+                            <option value="Penunjang" <?php if($row['jabatan'] == "Penunjang"){echo "selected";}; ?>>Penunjang</option>
+                            </select>
+                        </div>  
                         <br>
                         <div class="form-group">
                             <label for="">Tanggal Mulai Tugas (TMT)</label>
@@ -59,7 +82,12 @@ while($row = mysqli_fetch_array($query)){
                         <br>
                         <div class="form-group">
                             <label for="">Status Karyawan</label>
-                            <input type="text" class="form-control" name="status_karyawan" value="<?= $row['status_karyawan'] ?>" maxlength=10 required>
+                            <select name="status_karyawan" id="" class="form-select" required>
+                            <option value="" hidden>Pilih</option>
+                                <option value="Tetap" <?php if($row['status_karyawan'] == "Tetap"){echo "selected";}; ?>>Tetap</option>
+                                <option value="Pencobaan" <?php if($row['status_karyawan'] == "Pencobaan"){echo "selected";}; ?>>Pencobaan</option>
+                                <option value="Kontrak" <?php if($row['status_karyawan'] == "Kontrak"){echo "selected";}; ?>>Kontrak</option>
+                            </select>
                         </div>
                         <br>
                         <div class="form-group">
@@ -84,7 +112,12 @@ while($row = mysqli_fetch_array($query)){
                         <br>
                         <div class="form-group">
                             <label for="">Status KK</label>
-                            <input type="text" class="form-control" name="status_kk" value="<?= $row['status_kk'] ?>" maxlength=3 required>
+                            <select name="status_kk" id="" class="form-select" required>
+                                <option value="TK" <?php if($row['status_kk'] == "TK"){echo "selected";}; ?>>Tidak Kawin</option>
+                                <option value="K" <?php if($row['status_kk'] == "K"){echo "selected";}; ?>>Kawin</option>
+                                <option value="K1" <?php if($row['status_kk'] == "K1"){echo "selected";}; ?>>Tanggunan 1</option>
+                                <option value="K2" <?php if($row['status_kk'] == "K2"){echo "selected";}; ?>>Tanggunan 2 dst</option>
+                            </select>
                         </div>
                         <br>
                         <div class="form-group">
@@ -193,7 +226,12 @@ while($row = mysqli_fetch_array($query)){
                         <br>
                         <div class="form-group">
                             <label for="">Status Relawan</label>
-                            <input type="text" class="form-control" name="status_relawan" value="<?= $row['status_relawan'] ?>" id="">
+                            <select name="status_relawan" id="" class="form-select" required>
+                            <option value="" hidden>Pilih</option>
+                                <option value="AP" <?php if($row['status_relawan'] == "AP"){echo "selected";}; ?>>AP</option>
+                                <option value="APL" <?php if($row['status_relawan'] == "APL"){echo "selected";}; ?>>APL</option>
+                                <option value="Komite" <?php if($row['status_relawan'] == "Komite"){echo "selected";}; ?>>Komite</option>
+                            </select>
                         </div>
                         <br>
                         <div class="form-group">

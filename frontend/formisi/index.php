@@ -76,15 +76,15 @@ if($jmlh > 0){
                             <option value="Kepala Finance & Accounting">Kepala Finance & Accounting</option>
                             <option value="Kepala Perpustakaan">Kepala Perpustakaan</option> 
                             <option value="Kepala Sekolah">Kepala Sekolah</option>
-                            <option value="Kordinator Kesiswaan">Kordinator Kesiswaan</option>
-                            <option value="Kordinator Kurikulum">Kordinator Kurikulum</option>
-                            <option value="Kordinator Prasarana">Kordinator Sarana Prasarana</option>
-                            <option value="Kordinator Akutansi">Kordinator Akuntansi</option> 
-                            <option value="Kordinator Perkantoran">Kordinator Perkantoran</option>
-                            <option value="Kordinator Rekayasa Perangkat Lunak RPL">Kordinator Rekayasa Perangkat Lunak RPL</option>
-                            <option value="Kordinator Humanis">Kordinator Humanis</option>
-                            <option value="Kordinator B Inggris">Kordinator B Inggris</option>
-                            <option value="Kordinator B Mandarin">Kordinator B Mandarin</option> 
+                            <option value="Kordinator Kesiswaan">Koordinator Kesiswaan</option>
+                            <option value="Kordinator Kurikulum">Koordinator Kurikulum</option>
+                            <option value="Kordinator Prasarana">Koordinator Sarana Prasarana</option>
+                            <option value="Kordinator Akutansi">Koordinator Akuntansi</option> 
+                            <option value="Kordinator Perkantoran">Koordinator Perkantoran</option>
+                            <option value="Kordinator Rekayasa Perangkat Lunak RPL">Koordinator Rekayasa Perangkat Lunak RPL</option>
+                            <option value="Kordinator Humanis">Koordinator Humanis</option>
+                            <option value="Kordinator B Inggris">Koordinator B Inggris</option>
+                            <option value="Kordinator B Mandarin">Koordinator B Mandarin</option> 
                             <option value="Guru">Guru</option>
                             <option value="Staff">Staff</option>
                             <option value="Marketing">Marketing</option>
@@ -285,6 +285,30 @@ if($jmlh > 0){
                         <br>
                         <input class="btn btn-primary" type="submit" name="submit" value="Submit">
                     </form>
+                    <hr>Atau
+                    <div class="row">
+                        <div class="col">
+                    <form action="../biodata/export/import/importbiodata.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                            <label for="">Import Excel</label>
+                            <input type="file" class="form-control" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" required>
+                        </div><br>  
+                        <div class="form-group">
+                            <label for="">Import Gambar</label>
+                            <input type="file" class="form-control" name="foto" accept="image/png, image/jpg, image/jpeg" required>
+                        </div>
+                        <br>
+                        <input class="btn btn-primary" type="submit" name="import" value="Import">
+                    </form>
+                    </div>
+                    <div class="col" style="text-align:right;">
+                        <h4>Download Lembar Pengisian (xlsx)</h4>
+                        <a href="../biodata/export/import/tmp/Example.xlsx" download><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+</svg></a>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>

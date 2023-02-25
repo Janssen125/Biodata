@@ -1,27 +1,27 @@
 <?php
 $db = mysqli_connect('localhost','root','','biodata');
 
-$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE unit = 'TK'");
+$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE jabatan = 'Guru' AND unit = 'TK'");
 while($row = mysqli_fetch_array($data)){
 $tk = $row['jmlh'];
 }
 
-$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE unit = 'SD'");
+$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE jabatan = 'Guru' AND unit = 'SD'");
 while($row = mysqli_fetch_array($data)){
 $sd = $row['jmlh'];
 }
 
-$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE unit = 'SMP'");
+$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE jabatan = 'Guru' AND unit = 'SMP'");
 while($row = mysqli_fetch_array($data)){
 $smp = $row['jmlh'];
 }
 
-$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE unit = 'SMA'");
+$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE jabatan = 'Guru' AND unit = 'SMA'");
 while($row = mysqli_fetch_array($data)){
 $sma = $row['jmlh'];
 }
 
-$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE unit = 'SMK'");
+$data = mysqli_query($db, "SELECT COUNT(*) as jmlh FROM biodata WHERE jabatan = 'Guru' AND unit = 'SMK'");
 while($row = mysqli_fetch_array($data)){
 $smk = $row['jmlh'];
 }

@@ -7,7 +7,7 @@
                     document.write(new Date().getFullYear());
                 </script>
                 , made with ❤️ by
-                <a href="#" target="_blank" class="footer-link fw-bolder">XII RPL 1</a>
+                <a href="#" target="_blank" class="footer-link fw-bolder">Janssen Addison XII RPL 1</a>
             </div>
         </div>
     </footer>
