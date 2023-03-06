@@ -17,6 +17,5 @@ const runtime = new Runtime();
 const main = runtime.module(define, Inspector.into(document.body));
 
 </script>
-<div id="graph"></div>
 </body>
 </html>

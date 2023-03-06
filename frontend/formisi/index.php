@@ -19,8 +19,8 @@ if($jmlh > 0){
         <div class="d-flex align-items-end">
             <div class="col-12">
                 <div class="card-header">
-                    <h2>Tambah Biodata</h2>
-                </div>
+                    <h2>Tambah Biodata<h2><a href="#excel"><sub><h6>(Klik Disini jika ingin import dengan excel)</h6></sub></a>
+                </div><br>
                 <div class="card-body">
                     <form method="post" action="../../proses/biodata/tambah.php" enctype="multipart/form-data">
                         <div class="form-group">
@@ -286,7 +286,7 @@ if($jmlh > 0){
                         <input class="btn btn-primary" type="submit" name="submit" value="Submit">
                     </form>
                     <hr>Atau
-                    <div class="row">
+                    <div class="row" id="excel">
                         <div class="col">
                     <form action="../biodata/export/import/importbiodata.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
@@ -294,7 +294,7 @@ if($jmlh > 0){
                             <input type="file" class="form-control" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" required>
                         </div><br>  
                         <div class="form-group">
-                            <label for="">Import Gambar</label>
+                            <label for="">Import Foto Pribadi Anda</label>
                             <input type="file" class="form-control" name="foto" accept="image/png, image/jpg, image/jpeg" required>
                         </div>
                         <br>

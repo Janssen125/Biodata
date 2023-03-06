@@ -43,13 +43,13 @@ function bar(svg, down, d, selector) {
       .on("click", (event, d) => down(svg, d));
 
   bar.append("text")
-      .attr("x", margin.left - 6)
+      .attr("x", margin.left - 2)
       .attr("y", barStep * (1 - barPadding) / 2)
-      .attr("dy", ".35em")
+      .attr("dy", 0)
       .text(d => d.data.name);
 
   bar.append("rect")
-      .attr("x", x(0))
+      .attr("x", margin.left + 4)
       .attr("width", d => x(d.value) - x(0))
       .attr("height", barStep * (1 - barPadding));
 
@@ -262,7 +262,7 @@ function _height(root,barStep,margin)
 
 
 function _margin(){return(
-{top: 30, right: 500, bottom: 0, left: 80}
+{top: 30, right: 500, bottom: 0, left: 150}
 )}
 
 function _d3(require){return(
